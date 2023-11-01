@@ -12,10 +12,11 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
+    permissions:
+      id-token: write #This is required for requesting the JWT
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
